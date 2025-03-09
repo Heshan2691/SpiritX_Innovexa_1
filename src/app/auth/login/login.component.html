@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="form-container">
+    <h2>Welcome back!</h2>
+    <p>Enter your credentials to access your account</p>
+    <form [formGroup]="loginForm">
+      <label>Username</label>
+      <input type="text" formControlName="username" placeholder="Enter your email" />
+      <div *ngIf="username?.invalid && (username?.dirty || username?.touched)">
+        <small *ngIf="username?.errors?.['required']">Username is required.</small>
+      </div>
+
+      <label>Password</label>
+      <input type="password" formControlName="password" placeholder="Enter your password" />
+      <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+        <small *ngIf="password?.errors?.['required']">Password is required.</small>
+      </div>
+
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+
+      <p><a href="#">Forgot password?</a></p>
+
+      <div>
+        <input type="checkbox" /> Remember for 30 days
+      </div>
+
+      <button (click)="login()" [disabled]="loginForm.invalid">Login</button>
+
+      <p>Or</p>
+      <p>
+        Don't have an account? <a routerLink="/signup">Sign Up</a>
+      </p>
+    </form>
+  </div>
+  <div class="image-container"></div>
+</div>

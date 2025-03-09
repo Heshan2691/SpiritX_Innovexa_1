@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="form-container">
+    <h2>Get Started Now</h2>
+    <form [formGroup]="signupForm">
+      <label>Username</label>
+      <input type="text" formControlName="username" placeholder="Enter your username" />
+      <div *ngIf="username?.invalid && (username?.dirty || username?.touched)">
+        <small *ngIf="username?.errors?.['required']">Username is required.</small>
+        <small *ngIf="username?.errors?.['minlength']">Username must be at least 8 characters long.</small>
+      </div>
+
+      <label>Password</label>
+      <input type="password" formControlName="password" placeholder="Enter your password" (input)="getPasswordStrength()" />
+      <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+        <small *ngIf="password?.errors?.['required']">Password is required.</small>
+        <small *ngIf="password?.errors?.['pattern']">Password must contain at least one lowercase letter, one uppercase letter, one number, and one special character.</small>
+      </div>
+      <div>Password Strength: {{ getPasswordStrength() }}</div>
+
+      <label>Confirm Password</label>
+      <input type="password" formControlName="confirmPassword" placeholder="Re-enter password" />
+      <div *ngIf="confirmPassword?.invalid && (confirmPassword?.dirty || confirmPassword?.touched)">
+        <small *ngIf="confirmPassword?.errors?.['required']">Confirm Password is required.</small>
+        <small *ngIf="signupForm.errors?.['mismatch']">Passwords do not match.</small>
+      </div>
+
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+
+      <div>
+        <input type="checkbox" /> I agree to the terms & policy
+      </div>
+
+      <button (click)="signup()" [disabled]="signupForm.invalid">Signup</button>
+
+      <p>Or</p>
+      <p>
+        Have an account? <a routerLink="/login">Log in</a>
+      </p>
+    </form>
+  </div>
+  <div class="image-container"></div>
+</div>

@@ -1,0 +1,89 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 800px;
+    max-width: 100%;
+}
+
+.form-container {
+    padding: 40px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-container label {
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-container input[type="text"],
+.form-container input[type="password"] {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-container input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.form-container button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%; /* Ensures button width matches input fields */
+    text-align: center;
+}
+
+.form-container button:hover {
+    background-color: #218838;
+}
+
+.form-container p {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.form-container a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.form-container a:hover {
+    text-decoration: underline;
+}
+
+.image-container {
+    width: 50%;
+    background: url('../../assets/image.jpg') no-repeat center center;
+    background-size: cover;
+}
