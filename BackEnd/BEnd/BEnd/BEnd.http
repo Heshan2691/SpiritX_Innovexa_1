@@ -1,0 +1,6 @@
+@BEnd_HostAddress = http://localhost:5133
+
+GET {{BEnd_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

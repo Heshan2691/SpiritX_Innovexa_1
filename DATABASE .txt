@@ -1,0 +1,6 @@
+DATABASE 
+Database Name: AuthDB
+Host: mongodb://localhost:27017
+
+Collections:
+Users
